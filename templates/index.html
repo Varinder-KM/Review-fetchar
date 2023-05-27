@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Critic Crawler</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <ul>
+        <li><a class="active" href="/">
+            <img src= "{{url_for('static', filename='logo.png')}}">
+        </a></li>
+        <li id="developer"><img src="{{url_for('static', filename='developer.png')}}", width="130px"></li>
+    </ul>
+
+    <!-- Animated Part -->
+    <section id="animation">
+        <div class="row">
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+            <div>
+                <i class="fa fa-bicycle" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+                <i class="fa fa-anchor" aria-hidden="true"></i>
+                <i class="fa fa-binoculars" aria-hidden="true"></i>
+                <i class="fa fa-gift" aria-hidden="true"></i>
+                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
+                <i class="fa fa-thermometer-full" aria-hidden="true"></i>
+                <i class="fa fa-bath" aria-hidden="true"></i>
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                <i class="fa fa-flask" aria-hidden="true"></i>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+                <i class="fa fa-futbol-o" aria-hidden="true"></i>
+                <i class="fa fa-cc-visa" aria-hidden="true"></i>
+                <i class="fa fa-paypal" aria-hidden="true"></i>
+                <i class="fa fa-apple" aria-hidden="true"></i>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Product Entering section -->
+    <div id="prod_input_box">
+        <div>
+            <span id="hdr">Enter Product Name</span>
+            <p>Get Reviews  in Seconds. Enter product name who’s reviews you want , 
+                it provides reviews in structure format . you can download  reviews in csv file.</p>
+
+            <div>
+                <form action="/reviews" method="POST" id="input_form">
+                    <div id="prod_input">
+                        <input type="text" name="prod_input" required="required">
+                        <span>Ex:- iPhone 14</span>
+                    </div>
+    
+                    <input onclick="run_loader()" type="submit" id="crawl_btn" value="Crawl The Site">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="separator"></div>
+
+    <!-- Data RePresent Part -->
+    <div>
+        {% block dataset %}
+    
+        {% endblock dataset %}
+    </div>
+
+    <!-- Footer section -->
+    <footer>
+        <img src="{{url_for('static', filename='siderman.png')}}" width="320PX" height="320PX">
+        <div>
+            <p>This project is for educational purposes only. The data used in this project has been obtained solely 
+                for the purpose of academic research and study. We do not intend to use this data for any commercial or
+                 illegal purposes. All content displayed on this website belongs to Flipkart and is used under fair use
+                  principles. We do not claim ownership of any of the content displayed on this website.</p>
+        </div>
+    </footer>
+
+
+   
+</body>
+</html>
