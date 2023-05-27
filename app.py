@@ -42,7 +42,7 @@ def get_reviews(lnk):
     navs =  soup1.find('div', attrs={'class':'_2MImiq _1Qnn1K'})
     str_num = navs.find('span').text[10:]
     str_num = str_num.replace(',', '')
-    nums = 5 if int(str_num) > 5 else int(str_num)
+    nums = 2 if int(str_num) > 2 else int(str_num)
     for num in range(2, nums+1):
       hrf = 'https://www.flipkart.com' + lnk+ '&page='+ str(num)
       ls = sub_reviews(hrf)
